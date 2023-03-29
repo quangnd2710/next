@@ -1,11 +1,17 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import { Inter } from '@next/font/google'
-import styles from '@/styles/Home.module.css'
+import styles from "@/styles/Home.module.css";
+import { Inter } from "@next/font/google";
+import Head from "next/head";
+import Image from "next/image";
+import Link from "next/link";
+import useTrans from "@/hooks/useTrans";
 
-const inter = Inter({ subsets: ['latin'] })
+const baseURl = process.env.NEXT_PUBLIC_ENV_LOCAL_BASE_URL;
+console.log("baseURl", baseURl);
 
-export default function Home() {
+const inter = Inter({ subsets: ["latin"] });
+
+export default function Home(props: any) {
+  const trans = useTrans();
   return (
     <>
       <Head>
@@ -16,17 +22,14 @@ export default function Home() {
       </Head>
       <main className={styles.main}>
         <div className={styles.description}>
-          <p>
-            Get started by editing&nbsp;
-            <code className={styles.code}>pages/index.tsx</code>
-          </p>
+          <p>{trans.home.title}</p>
           <div>
             <a
               href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
               target="_blank"
               rel="noopener noreferrer"
             >
-              By{' '}
+              By{" "}
               <Image
                 src="/vercel.svg"
                 alt="Vercel Logo"
@@ -119,5 +122,13 @@ export default function Home() {
         </div>
       </main>
     </>
-  )
+  );
+}
+
+export async function getStaticProps() {
+  return {
+    props: {
+      accounts: ["test"],
+    },
+  };
 }
