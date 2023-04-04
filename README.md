@@ -1,38 +1,51 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Nextjs App code-base in Typescript
 
-## Getting Started
+## _A very simple Nextjs project with common features_
 
-First, run the development server:
+- React 18
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+- React Hook Form v7
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- React MUI v5
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+- Redux/Redux-Saga
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+## Features
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+- Complete project with clean folder structure and routing configuration.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- Complete implementation of Redux with Redux Saga which easy for development.
 
-## Learn More
+- Common inputs base on MUI and React Hook Form
 
-To learn more about Next.js, take a look at the following resources:
+- Multiple languages implement with i18next.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Multiple configurations for enviroment.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Structure: Base on [Component Driven User Interfaces](https://www.componentdriven.org/)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- components: component in isolation and define its relevant states
+
+- constants: constants variables
+
+- containers: compose small components together to unlock new features while gradually increasing complexity.
+
+- pages: build pages by combining composite components. Use mock data to simulate pages in hard-to-reach states and edge cases.
+
+- modules: contains the logic of each individual page
+
+- hooks: common hooks will be used in the project
+
+- layouts: the big common layout will apply for multiple pages
+
+- providers: which's used once time in the root
+
+- services: network interface config and function call api of each page
+
+- redux: configuration of redux
+
+- utils: utility function
+
+- translation: configuration of multiple languages
